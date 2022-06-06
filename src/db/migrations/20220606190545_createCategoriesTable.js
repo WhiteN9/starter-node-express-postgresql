@@ -5,7 +5,7 @@
 exports.up = function (knex) {
   return knex.schema.hasTable("categories", (exists) => {
     if (!exists) {
-      knex.schema.createTableIfNotExists("categories", (table) => {
+      return knex.schema.createTableIfNotExists("categories", (table) => {
         table.increments("category_id").primary();
         table.string("category_name");
         table.text("category_description");
