@@ -1,8 +1,12 @@
 const path = require("path"); //specifying a storage location for migration
-require("dotenv").config();
+
+require("dotenv").config(); 
+// load all env vars inside .env file into the environment
+
 const { DATABASE_URL } = process.env;
 
 module.exports = {
+  // Define the database configuration object, in this case, it is a development configuration object
   development: {
     client: "postgresql",
     connection: DATABASE_URL,
